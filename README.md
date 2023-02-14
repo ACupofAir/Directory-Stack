@@ -4,10 +4,15 @@ A powershell module to switch directory quickly
 
 ## :gear: Install
 
-- Powershell Gallery: `cmd todo`
+- Install from PowerShell Gallery(Suggestion)
+  - `Install-Module -Name directory-stack`
+- Install mannual
+  - download this repository: `git clone git@github.com:ACupofAir/Directory-Stack.git` and rename it to `directory-stack`
+  - reference the folder in you powershell profile(`$PROFILE` is the default powershell config filek) , add this line to the profile
+    `Import-Module -Name $repository_path -DisableNameChecking`
 
 ## :toolbox: Usage
-
+![demo](https://github.com/ACupofAir/dotfiles/blob/main/res/dir_stack_demo.gif?raw=true)
 - pushd directory in stack
   - `pd`: pushd current directory in the stack
   - `pd $DIR_NAME`: pushd $DIR_NAME in the stack
