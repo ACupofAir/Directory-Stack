@@ -32,7 +32,11 @@ function Get-Dir-Stack
     }
     Write-Host "-------------------------------------------------------------" -ForegroundColor Yellow
     Write-Host "Select an index or press any key to exit: " -NoNewline -ForegroundColor Cyan
-    [int]$input_idx = Read-Host
+    $input_idx = Read-Host
+    if ($input_idx.Length -gt 0)
+    {
+      $input_idx = [int]$input_idx
+    }
     if ($input_idx -is [ int ] -and $input_idx -lt $dirs_stack.Count)
     {
       Set-Location $dirs_stack[$input_idx]

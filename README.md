@@ -38,4 +38,7 @@ A powershell module to switch directory quickly
 - `Remove-Static-Dir-Item $DIR_INDEX`: remove one directory in static directory stack
 
 ## :date: Release Log
-- 2023/02/03: add autoload directory support
+
+| version | release date | description                    |
+| ------- | ------------ | ------------------------------ |
+| v1.1.0  | 2023/02/03   | add autoload directory support |
