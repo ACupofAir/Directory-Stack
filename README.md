@@ -33,3 +33,9 @@ A powershell module to switch directory quickly
 - show the directories in stack and switch to special stack
   - `dv`: show the table of stack(named from the linux command dirs -v), and waiting for user to input the index of directory want to go
   - `pd $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+- `Add-Static-Dir-Item $DIR_NAME`: add one directory will autoload in directory stack
+- `Show-Static-Dirs`: show the directory items which will autoload into directory stack
+- `Remove-Static-Dir-Item $DIR_INDEX`: remove one directory in static directory stack
+
+## :date: Release Log
+- 2023/02/03: add autoload directory support
