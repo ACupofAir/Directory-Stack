@@ -4,6 +4,7 @@ A powershell module to switch directory quickly
 
 ## :gear: Install
 
+### powershell user
 - Install from PowerShell Gallery(Suggestion)
   - `Install-Module -Name directory-stack`
 - Update from PowerShell Gallery(Suggestion)
@@ -21,6 +22,17 @@ A powershell module to switch directory quickly
   Set-Alias -Name pp Remove-Dir-Stack-Item
   ```
 
+### bash or zsh
+* bash user
+```bash
+cat bash/dir_stach.sh >> ~/.bashrc
+source ~/.bashrc
+```
+* zsh user
+```bash
+cat bash/dir_stach.sh >> ~/.zshrc
+source ~/.zshrc
+```
 ## :toolbox: Usage
 
 > **Following usage will run rightly after config alias in $PROFILE**
@@ -34,7 +46,11 @@ A powershell module to switch directory quickly
   - `pp $DIR_INDEX`; popd directory index `$DIR_INDEX` in stack out
 - show the directories in stack and switch to special stack
   - `dv`: show the table of stack(named from the linux command dirs -v), and waiting for user to input the index of directory want to go
-  - `pd $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+  - `jp $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+
+  ### static directory stack(only support powershell now)
+  > these directories will automatically be added into stack every time you start a new shell
+
 - `Add-Static-Dir-Item $DIR_NAME`: add one directory will autoload in directory stack
 - `Show-Static-Dirs`: show the directory items which will autoload into directory stack
 - `Remove-Static-Dir-Item $DIR_INDEX`: remove one directory in static directory stack
