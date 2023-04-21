@@ -31,7 +31,7 @@ alias cldirs=clear_dirs_stack
 
 # directory stack
 dirs_stack=()
-dirs_stack_file='~/.config/dirs_stack/store_arr'
+dirs_stack_file=~/.config/dirs_stack/store_arr
 if [ ! -f ${dirs_stack_file} ]; then
     touch ${dirs_stack_file}
 fi
