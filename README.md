@@ -22,15 +22,15 @@ A powershell module to switch directory quickly
   Set-Alias -Name pp Remove-Dir-Stack-Item
   ```
 
-### bash or zsh
+### bash or zsh user
 * bash user
 ```bash
-cat bash/dir_stach.sh >> ~/.bashrc
+curl https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/dir_stack.sh >> ~/.bashrc
 source ~/.bashrc
 ```
 * zsh user
 ```bash
-cat bash/dir_stach.sh >> ~/.zshrc
+curl https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/dir_stack.sh >> ~/.zshrc
 source ~/.zshrc
 ```
 ## :toolbox: Usage

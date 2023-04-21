@@ -1,3 +1,8 @@
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>directory stack>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# @author: June Wang(&chatgpt)
+# @email:  thoughts.times@gmail.com
+# @date:   4/21/2023
 #===========================colors===========================
 NOCOLOR='\033[0m'
 RED='\033[0;31m'
@@ -116,3 +121,4 @@ function jumpinto_idx_item() {
         echo -e "${RED}The index $1 must less than stack length ${#dirs_stack[@]}"
     fi
 }
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<directory stack<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
