@@ -26,12 +26,15 @@ alias dv=get_dir_stack
 alias pd=add_stack_item
 alias pp=remove_stack_item
 alias jp=jumpinto_idx_item
+alias cldirs=clear_dirs_stack
 #=========================Function===========================
 
 # directory stack
 dirs_stack=()
-staics_dirs_stack=()
-static_config_file=""
+dirs_stack_file='~/.config/dirs_stack/store_arr'
+if [ ! -f ${dirs_stack_file} ]; then
+    touch ${dirs_stack_file}
+fi
 
 # function to detect dir is in the stack or not
 function is_arr_item() {
@@ -65,6 +68,7 @@ function remove_arr_item() {
 # function to get all the dirs in dynmatic and static stack
 # * dv: list all the item in the stacks
 function get_dir_stack() {
+    source "${dirs_stack_file}"
     if [ -z "${dirs_stack}" ]; then
         echo -e "${RED}The stack is empty, use 'pd dir_name' to push the directory to the stack${NOCOLOR}"
     else
@@ -99,6 +103,7 @@ function add_stack_item() {
     else
         echo -e "${RED}The directory your input isn't exist${NOCOLOR}"
     fi
+    declare -p dirs_stack > ${dirs_stack_file}
 }
 
 # function to remove element in directory stack
@@ -109,6 +114,7 @@ function remove_stack_item() {
     else
         echo -e "${RED}The index $1 must less than stack length ${#dirs_stack[@]}"
     fi
+    declare -p dirs_stack > ${dirs_stack_file}
 }
 
 # function to jump to the directory index is $idx
@@ -121,4 +127,11 @@ function jumpinto_idx_item() {
         echo -e "${RED}The index $1 must less than stack length ${#dirs_stack[@]}"
     fi
 }
+
+# clear the directory stack
+# * cldirs: clear the directory stack
+function clear_dirs_stack() {
+    unset dirs_stack
+}
+
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<directory stack<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

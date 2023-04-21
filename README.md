@@ -23,15 +23,8 @@ A powershell module to switch directory quickly
   ```
 
 ### bash or zsh user
-* bash user
 ```bash
-curl https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/dir_stack.sh >> ~/.bashrc
-source ~/.bashrc
-```
-* zsh user
-```bash
-curl https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/dir_stack.sh >> ~/.zshrc
-source ~/.zshrc
+curl -sSL https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/install.sh | bash
 ```
 ## :toolbox: Usage
 
@@ -47,6 +40,8 @@ source ~/.zshrc
 - show the directories in stack and switch to special stack
   - `dv`: show the table of stack(named from the linux command dirs -v), and waiting for user to input the index of directory want to go
   - `jp $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+- clear the directory stack
+  - `cldirs`: temporarily clear stack, when you start a new stack, the directory stack will be restored
 
   ### static directory stack(only support powershell now)
   > these directories will automatically be added into stack every time you start a new shell
