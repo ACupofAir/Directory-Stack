@@ -1,4 +1,3 @@
-
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>directory stack>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # @author: June Wang(&chatgpt)
 # @email:  thoughts.times@gmail.com
@@ -20,6 +19,8 @@ LIGHTBLUE='\033[1;34m'
 LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
+
+
 #===========================Alias============================
 # write by junw
 alias dv=get_dir_stack
@@ -27,14 +28,12 @@ alias pd=add_stack_item
 alias pp=remove_stack_item
 alias jp=jumpinto_idx_item
 alias cldirs=clear_dirs_stack
-#=========================Function===========================
 
+
+#=========================Function===========================
 # directory stack
 dirs_stack=()
 dirs_stack_file=~/.config/dirs_stack/store_arr
-if [ ! -f ${dirs_stack_file} ]; then
-    touch ${dirs_stack_file}
-fi
 
 # function to detect dir is in the stack or not
 function is_arr_item() {

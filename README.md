@@ -28,6 +28,7 @@ curl -sSL https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/
 ```
 ## :toolbox: Usage
 
+### powershell user
 > **Following usage will run rightly after config alias in $PROFILE**
 
 ![demo](https://github.com/ACupofAir/dotfiles/blob/main/res/dir_stack_demo.gif?raw=true)
@@ -39,16 +40,27 @@ curl -sSL https://raw.githubusercontent.com/ACupofAir/Directory-Stack/main/bash/
   - `pp $DIR_INDEX`; popd directory index `$DIR_INDEX` in stack out
 - show the directories in stack and switch to special stack
   - `dv`: show the table of stack(named from the linux command dirs -v), and waiting for user to input the index of directory want to go
-  - `jp $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+  - `pd $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
 - clear the directory stack
-  - `cldirs`: temporarily clear stack, when you start a new stack, the directory stack will be restored
 
-  ### static directory stack(only support powershell now)
-  > these directories will automatically be added into stack every time you start a new shell
+- static directory stack(only support powershell now)
+> these directories will automatically be added into stack every time you start a new shell
+  - `Add-Static-Dir-Item $DIR_NAME`: add one directory will autoload in directory stack
+  - `Show-Static-Dirs`: show the directory items which will autoload into directory stack
+  - `Remove-Static-Dir-Item $DIR_INDEX`: remove one directory in static directory stack
 
-- `Add-Static-Dir-Item $DIR_NAME`: add one directory will autoload in directory stack
-- `Show-Static-Dirs`: show the directory items which will autoload into directory stack
-- `Remove-Static-Dir-Item $DIR_INDEX`: remove one directory in static directory stack
+### bash or zsh user
+- pushd directory in stack
+  - `pd`: pushd current directory in the stack
+  - `pd $DIR_NAME`: pushd `$DIR_NAME` in the stack
+- popd directory out stack
+  - `pp $DIR_INDEX`; popd directory index `$DIR_INDEX` in stack out
+- show the directories in stack and switch to special stack
+  - `dv`: show the table of stack(named from the linux command dirs -v), and waiting for user to input the index of directory want to go
+  - `jp $DIR_INDEX`: jump to the directory whose index is `$DIR_INDEX` in the stack
+- [ ] temporary dirs workspace
+  - [x] `cldirs`: temporarily clear stack, when you start a new stack, the directory stack will be restored
+  - [ ] toggle temporary virtual dir stack for some env, maybe need a flag to declare it
 
 ## :date: Release Log
 
