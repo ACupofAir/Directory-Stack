@@ -15,3 +15,5 @@ elif [ -f "$HOME/.zshrc" ]; then
     echo "source $HOME/bin/dir_stack.sh" >> ~/.zshrc
     source $HOME/.zshrc
 fi
+
+echo "successfully installed"
