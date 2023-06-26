@@ -5,32 +5,33 @@
 #
 # Generated on: 2/14/2023
 #
+# Updated on: 6/27/2023 2:33 AM
 
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule = 'directory-stack.psm1'
+    RootModule        = 'directory-stack.psm1'
 
     # Version number of this module.
-    ModuleVersion = '1.1.2'
+    ModuleVersion     = '1.2.2'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
 
     # ID used to uniquely identify this module
-    GUID = '6554f201-8015-4321-a797-69923e1202fe'
+    GUID              = '6554f201-8015-4321-a797-69923e1202fe'
 
     # Author of this module
-    Author = 'ACupofAir'
+    Author            = 'ACupofAir'
 
     # Company or vendor of this module
-    CompanyName = 'Unknown'
+    CompanyName       = 'SEtU'
 
     # Copyright statement for this module
-    Copyright = '(c) ACupofAir. All rights reserved.'
+    Copyright         = '(c) ACupofAir. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description = 'A Module to change directory easily, inspiring by linux directory stack'
+    Description       = 'A Module to change directory easily, inspiring by linux directory stack'
 
     # Minimum version of the PowerShell engine required by this module
     # PowerShellVersion = ''
@@ -69,16 +70,16 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @("Get-Dir-Stack", "Set-Dir-Stack", "Remove-Dir-Stack-Item", "Add-Static-Dir-Item", "Remove-Static-Dir-Item", "Show-Static-Dirs")
+    FunctionsToExport = @("Get-Dir-Stack", "Set-Stacked-Dir", "Remove-Dir-Stack-Item", "Add-Dir-Item")
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport = @("Get-Dir-Stack", "Set-Dir-Stack", "Remove-Dir-Stack-Item")
+    CmdletsToExport   = @("Get-Dir-Stack", "Set-Stacked-Dir", "Remove-Dir-Stack-Item", "Add-Dir-Item")
 
     # Variables to export from this module
     VariablesToExport = '*'
 
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-    AliasesToExport = @()
+    AliasesToExport   = @()
 
     # DSC resources to export from this module
     # DscResourcesToExport = @()
@@ -90,7 +91,7 @@
     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData = @{
+    PrivateData       = @{
 
         PSData = @{
 
