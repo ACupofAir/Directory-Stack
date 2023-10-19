@@ -25,8 +25,9 @@ WHITE='\033[1;37m'
 # write by junw
 alias dv=get_dir_stack
 alias pd=add_stack_item
-alias pp=remove_stack_item
+alias rmd=remove_stack_item
 alias jp=jumpinto_idx_item
+alias pp=pop_idx_item
 alias cldirs=clear_dirs_stack
 
 
@@ -106,7 +107,7 @@ function add_stack_item() {
 }
 
 # function to remove element in directory stack
-# * pp $idx: remove the arrary[idx] element in stack
+# * rmd $idx: remove the arrary[idx] element in stack
 function remove_stack_item() {
     if [[ $1 =~ ^[0-9]+$ ]] && [ "$1" -le ${#dirs_stack[@]} ]; then
         dirs_stack=($(remove_arr_item $1 "${dirs_stack[@]}"))
@@ -117,7 +118,7 @@ function remove_stack_item() {
 }
 
 # function to jump to the directory index is $idx
-# * jp $idx: remove the arrary[idx] element in stack
+# * jp $idx: jump to the arrary[idx] element in stack
 function jumpinto_idx_item() {
     if [[ $1 =~ ^[0-9]+$ ]] && [ "$1" -le ${#dirs_stack[@]} ]; then
         cd ${dirs_stack[$1]}
@@ -125,6 +126,19 @@ function jumpinto_idx_item() {
     else
         echo -e "${RED}The index $1 must less than stack length ${#dirs_stack[@]}"
     fi
+}
+
+# function to jump to the directory index is $idx, and pop it from stack
+# * pp $idx: pop the arrary[idx] element in stack
+function pop_idx_item() {
+    if [[ $1 =~ ^[0-9]+$ ]] && [ "$1" -le ${#dirs_stack[@]} ]; then
+        cd ${dirs_stack[$1]}
+        echo -e "${RED}Jump${NOCOLOR} to ${GREEN}${PWD}${NOCOLOR}"
+        dirs_stack=($(remove_arr_item $1 "${dirs_stack[@]}"))
+    else
+        echo -e "${RED}The index $1 must less than stack length ${#dirs_stack[@]}"
+    fi
+    declare -p dirs_stack > ${dirs_stack_file}
 }
 
 # clear the directory stack
